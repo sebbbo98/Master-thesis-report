@@ -1,0 +1,56 @@
+\documentclass[fontsize=12pt,oneside]{scrreprt}
+\include{Einstellungen/packages}
+\begin{document}
+\keepXColumns
+
+%%%%%%%%% DECKBLATT %%%%%%%%%%%%%%%
+\include{Einstellungen/deckblatt}
+
+%%%%%%%%% INHALTSVERZEICHNIS %%%%%%%%%%%%%%%
+\tableofcontents
+\pagenumbering{Roman}
+
+% %%%%%%%%% ABBILDUNGEN %%%%%%%%%%%%%%%
+\newpage
+\listoffigures
+
+% %%%%%%%%% TABELLEN %%%%%%%%%%%%%%%
+\newpage
+\listoftables
+
+%%%%%%%%% ABKÜRZUNGEN %%%%%%%%%%%%%%%
+%\include{Verzeichnisse/abkuerzungen}
+
+%%%%%%%%% SYMBOLE %%%%%%%%%%%%%%%
+%\include{Verzeichnisse/symbole}
+
+%%%%%%%%% KOPFZEILE %%%%%%%%%%%%%%%
+\include{Einstellungen/kopfzeile}
+
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% INHALT %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\include{Example}
+\include{1Motivation.tex}
+\include{2Procedure.tex}
+\include{3Methods.tex}
+\include{4Type_regions.tex}
+\include{5Meta_Analysis.tex}
+\include{6Comparison.tex}
+\include{7Summary.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% %%%%%%%%% ANHANG %%%%%%%%%%%%%%%
+\pagenumbering{Roman}
+\include{Anhang}
+
+%%%%%%%%% LITERATURVERZEICHNIS %%%%%%%%%%%%%%%
+\printbibliography[heading=bibintoc, title=Literature]
+
+
+\end{document}

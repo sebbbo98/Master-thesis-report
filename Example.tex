@@ -1,0 +1,35 @@
+\chapter{Kapitel}
+\section{Abschnitt}
+\subsection{Unter-Abschnitt}
+\subsubsection{Unter-Unter-Abschnitt}
+\subsection{Tabelle} %https://www.tablesgenerator.com/ oder latex-tables.com um automatische Tabellen zu erzeugen
+    \begin{table}[htbp]
+        \centering
+        \caption{Das ist eine Tabellenüberschrift}
+        
+        \begin{tabular}{|c|c|}
+        \hline bsp1     &  wert dazu\\
+        \hline    bspp2      & wert dazu \\
+        \hline    \end{tabular}
+       
+        \label{tab:damitreferenzierstdu}
+    \end{table}
+    
+\subsection{Abbildung}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{Bilder/institutslogo.png}
+        \caption{Das ist eine Bildunterschrift}
+        \label{fig:damitreferenzierst du}
+    \end{figure}
+    
+\subsection{Formel} %https://www.zahlen-kern.de/editor/ um automatische Formeln zu erzeugen
+    \begin{equation}
+        \begin{gathered} 
+            m_{aufb}\Ddot{z_2}+d_{aufb}(\Dot{z_2}-\Dot{z_1})+c_{aufb}(z_2-z_1)=0 \\
+            m_{aufb}\Ddot{z_2}-d_{aufb}\Dot{z_1}+d_{aufb}\Dot{z_2}-c_{aufb}z_1+c_{aufb}z_2=0 
+        \end{gathered}
+        \label{eq:bla}
+    \end{equation} \\
+    Referenz auf Formel \ref{eq:bla}

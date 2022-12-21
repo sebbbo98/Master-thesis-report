@@ -1,0 +1,83 @@
+% Farben
+\usepackage{color}           % Alles folgende: \color{red} -- Nur ein Abschnitt: \textcolo{blue}{lorem ipsum}
+
+\usepackage{setspace}        % Zeilenabstand ändern: \begin{doublespace} oder singlespace oder onehalfspace
+\usepackage{lipsum}          % Lorem Ipsum - random Text erzeugen: \lipsum[100] (Anzahl Wörter)
+\usepackage{pgfplots}        % Plots erstellen https://de.overleaf.com/learn/latex/Pgfplots_package
+\pgfplotsset{compat=1.13}    % <- needed!!
+
+\definecolor{myblue}{HTML}{309345}
+
+\usepackage{amssymb}         % https://de.wikibooks.org/wiki/LaTeX-Kompendium:_amssymb
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\usepackage[utf8]{inputenc}  %
+%Sprachpaket: letzteres ist Standardpaket
+\usepackage[ngerman, english]{babel}  % Umlaute im Deutschen
+\usepackage[T1]{fontenc}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+\usepackage{tabularx}        % Tabellen
+\usepackage{multirow}        % span bei Tabellen
+
+\usepackage[backend=biber,style=numeric]{biblatex} % Zitieren
+\addbibresource{Verzeichnisse/literatur.bib} % Quellenverzeichnis 
+
+\usepackage{enumitem}        % Manipulation von Listen -- https://de.wikibooks.org/wiki/LaTeX-W%C3%B6rterbuch:_enumitem
+\usepackage{csquotes}        % Zitate \cite{} https://www.namsu.de/Extra/pakete/Biblatex.html
+\usepackage{float}           % zB Bilder direkt im Text (s. https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions)
+\usepackage{caption}         % Bildunter- & überschriften
+%\usepackage{textcomp}       % Verschiedene Währungssymbole und co
+%\usepackage{rotating}       % Rotating objects \begin{sideways} & \begin{rotate}{30} & \begin{turn}{30}
+\usepackage{eurosym}
+\usepackage{ltablex}         % Kombiniert tabularx und longtable
+
+\usepackage{microtype}       % automatische Verbesserung der pdf-Datei
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{lmodern}        %schönere Schrift in pdf Dateien
+        
+%%%%%%%%%% Seitenlayout ändern %%%%%%%%%%%%%%%
+% \usepackage{geometry}
+% \geometry{
+% % showframe,
+%  papersize={210mm,297mm},
+%  includeheadfoot,
+%  top = 20mm,
+%  left = 25mm,
+%  bottom= 20mm,
+%  right = 25mm,
+%  lines = 45,
+%  headsep = \baselineskip,
+%  footskip = \dimexpr2\baselineskip+3mm\relax,
+% }
+
+\usepackage{scrlayer-scrpage}   % 
+
+\newcommand{\HRule}{\rule{\linewidth}{0.2mm}}
+
+\KOMAoptions{ 
+	listof=totoc,% LoF, LoT ins ToC eintragen 
+	listof=entryprefix,% Prefix für Einträge in LoF, LoT etc. verwenden 
+	listof=indent% Aufheben von listof=flat 
+} 
+
+%%%%%%%%%% Hat irgendwas mit den Verzeichnissen zu tun
+\newcaptionname{ngerman}{\listoflofentryname}{Abb.} 
+\newcaptionname{ngerman}{\listoflotentryname}{Tab.}
+
+\usepackage{expl3} 
+\ExplSyntaxOn 
+\clist_map_inline:nn 
+{figure,table} 
+{\DeclareTOCStyleEntry[ 
+	indent=0pt,% kein Einzug 
+	dynnumwidth,% automatisches Bestimmen des Platzes für die Nummer 
+	numsep=2em% Abstand zwischen Nummer und Eintragungstext 
+	]{section}{#1} 
+} 
+\ExplSyntaxOff 
+
+\AfterTOCHead{\thispagestyle{empty}\pagestyle{empty}} 
+\AfterStartingTOC{\cleardoublepage} 
